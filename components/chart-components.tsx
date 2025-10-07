@@ -15,6 +15,15 @@ import {
   XAxis,
   YAxis,
 } from "recharts"
+import dynamic from "next/dynamic"
+
+const NetworkGraph = dynamic(() => import("@/components/network-graph"), {
+  ssr: false,
+})
+
+const GeographicMap = dynamic(() => import("@/components/geographic-map"), {
+  ssr: false,
+})
 
 const COLORS = [
   "hsl(var(--chart-1))",
@@ -129,37 +138,25 @@ export default function ChartComponents({ platformData, priorityData, timeData, 
         </CardContent>
       </Card>
 
-      {/* Network Graph Placeholder */}
+      {/* Network Graph */}
       <Card className="lg:col-span-2">
         <CardHeader>
           <CardTitle>Seller Network Graph</CardTitle>
           <CardDescription>Cross-platform seller connections and relationships</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="h-[400px] flex items-center justify-center bg-muted/30 rounded-lg border-2 border-dashed">
-            <div className="text-center text-muted-foreground space-y-2">
-              <p className="font-medium">Network Visualization</p>
-              <p className="text-sm">D3.js network graph showing seller-to-platform connections</p>
-              <p className="text-xs">(Requires D3.js implementation with force-directed layout)</p>
-            </div>
-          </div>
+          <NetworkGraph cases={cases} />
         </CardContent>
       </Card>
 
-      {/* Geographic Map Placeholder */}
+      {/* Geographic Map */}
       <Card className="lg:col-span-2">
         <CardHeader>
           <CardTitle>Geographic Distribution</CardTitle>
           <CardDescription>Seller locations and artifact origins mapped globally</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="h-[400px] flex items-center justify-center bg-muted/30 rounded-lg border-2 border-dashed">
-            <div className="text-center text-muted-foreground space-y-2">
-              <p className="font-medium">Interactive Map</p>
-              <p className="text-sm">Leaflet.js map displaying seller locations from case data</p>
-              <p className="text-xs">(Requires Leaflet.js implementation with marker clustering)</p>
-            </div>
-          </div>
+          <GeographicMap cases={cases} />
         </CardContent>
       </Card>
     </div>
