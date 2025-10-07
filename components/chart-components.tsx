@@ -25,12 +25,15 @@ const GeographicMap = dynamic(() => import("@/components/geographic-map"), {
   ssr: false,
 })
 
-const COLORS = [
-  "hsl(var(--chart-1))",
-  "hsl(var(--chart-2))",
-  "hsl(var(--chart-3))",
-  "hsl(var(--chart-4))",
-  "hsl(var(--chart-5))",
+const CHART_COLORS = [
+  "#3b82f6", // Blue
+  "#10b981", // Green
+  "#f59e0b", // Amber
+  "#ef4444", // Red
+  "#8b5cf6", // Purple
+  "#ec4899", // Pink
+  "#06b6d4", // Cyan
+  "#f97316", // Orange
 ]
 
 interface ChartComponentsProps {
@@ -66,7 +69,11 @@ export default function ChartComponents({ platformData, priorityData, timeData, 
                   borderRadius: "8px",
                 }}
               />
-              <Bar dataKey="value" fill="hsl(var(--chart-1))" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+                {platformChartData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={CHART_COLORS[index % CHART_COLORS.length]} />
+                ))}
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
         </CardContent>
@@ -88,11 +95,10 @@ export default function ChartComponents({ platformData, priorityData, timeData, 
                 labelLine={false}
                 label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
                 outerRadius={100}
-                fill="hsl(var(--chart-1))"
                 dataKey="value"
               >
                 {priorityChartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  <Cell key={`cell-${index}`} fill={CHART_COLORS[index % CHART_COLORS.length]} />
                 ))}
               </Pie>
               <Tooltip
@@ -129,9 +135,10 @@ export default function ChartComponents({ platformData, priorityData, timeData, 
               <Line
                 type="monotone"
                 dataKey="value"
-                stroke="hsl(var(--chart-2))"
-                strokeWidth={2}
-                dot={{ fill: "hsl(var(--chart-2))" }}
+                stroke="#8b5cf6"
+                strokeWidth={3}
+                dot={{ fill: "#8b5cf6", r: 5 }}
+                activeDot={{ r: 7 }}
               />
             </LineChart>
           </ResponsiveContainer>

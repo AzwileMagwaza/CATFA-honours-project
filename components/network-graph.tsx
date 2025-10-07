@@ -126,25 +126,31 @@ export default function NetworkGraph({ cases }: NetworkGraphProps) {
       .force("center", d3.forceCenter(dimensions.width / 2, dimensions.height / 2))
       .force("collision", d3.forceCollide().radius(30))
 
-    // Create links
     const link = g
       .append("g")
+      .attr("class", "links")
       .selectAll("line")
       .data(links)
       .join("line")
-      .attr("stroke", "hsl(var(--muted-foreground))")
-      .attr("stroke-opacity", 0.3)
-      .attr("stroke-width", (d) => Math.sqrt(d.value))
+      .attr("stroke", "#64748b")
+      .attr("stroke-opacity", 0.6)
+      .attr("stroke-width", (d) => Math.max(2, Math.sqrt(d.value) * 2))
 
-    // Create nodes
     const node = g
       .append("g")
+      .attr("class", "nodes")
       .selectAll("circle")
       .data(nodes)
       .join("circle")
-      .attr("r", (d) => (d.type === "platform" ? 15 : 8))
-      .attr("fill", (d) => (d.type === "platform" ? "hsl(var(--chart-1))" : "hsl(var(--chart-2))"))
-      .attr("stroke", "hsl(var(--background))")
+      .attr("r", (d) => (d.type === "platform" ? 15 : 10))
+      .attr("fill", (d) => {
+        if (d.type === "platform") {
+          return "#3b82f6" // Blue for platforms
+        } else {
+          return "#10b981" // Green for sellers
+        }
+      })
+      .attr("stroke", "#ffffff")
       .attr("stroke-width", 2)
       .style("cursor", "pointer")
       .call(d3.drag<SVGCircleElement, Node>().on("start", dragstarted).on("drag", dragged).on("end", dragended) as any)
@@ -219,11 +225,11 @@ export default function NetworkGraph({ cases }: NetworkGraphProps) {
       <svg ref={svgRef} className="w-full border rounded-lg bg-card" />
       <div className="absolute top-2 right-2 bg-card/90 backdrop-blur-sm border rounded-lg p-2 text-xs space-y-1">
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-[hsl(var(--chart-1))]" />
+          <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#3b82f6" }} />
           <span>Platforms</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-[hsl(var(--chart-2))]" />
+          <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#10b981" }} />
           <span>Sellers</span>
         </div>
         <p className="text-muted-foreground pt-1">Drag nodes • Scroll to zoom</p>
