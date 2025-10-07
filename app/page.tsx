@@ -233,6 +233,88 @@ export default function HomePage() {
         </Card>
       </section>
 
+      {/* Challenges & Limitations */}
+      <section className="space-y-6">
+        <Card className="border-destructive/50 bg-destructive/5">
+          <CardHeader>
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-destructive/10 text-destructive">
+                <Shield className="h-6 w-6" />
+              </div>
+              <div>
+                <CardTitle>Challenges & Limitations</CardTitle>
+                <CardDescription>Constraints and considerations in OSINT-based artifact investigation</CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              While the CATFA framework demonstrates the potential of OSINT methodologies for cultural heritage
+              protection, several challenges and limitations must be acknowledged:
+            </p>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <span className="text-destructive mt-0.5">•</span>
+                <span>
+                  <strong>Limited accessibility and persistence of online data:</strong> Listings are often ephemeral,
+                  removed quickly, or hidden behind authentication walls, making systematic monitoring difficult.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive mt-0.5">•</span>
+                <span>
+                  <strong>Metadata stripping and inconsistent EXIF:</strong> Many platforms automatically strip EXIF
+                  data from uploaded images, reducing the effectiveness of image forensics.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive mt-0.5">•</span>
+                <span>
+                  <strong>Restricted access and paywalls:</strong> Advanced tools like Shodan Pro and Maltego Pro
+                  require paid subscriptions, limiting the scale and depth of investigations for resource-constrained
+                  researchers.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive mt-0.5">•</span>
+                <span>
+                  <strong>Actor anonymity and platform privacy restrictions:</strong> Sellers often use pseudonyms,
+                  VPNs, and privacy-focused platforms, making attribution and cross-platform linking challenging.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive mt-0.5">•</span>
+                <span>
+                  <strong>Ethical constraints (POPIA):</strong> Compliance with data protection regulations prevents
+                  intrusive methods such as social engineering, unauthorized access, or invasive profiling.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive mt-0.5">•</span>
+                <span>
+                  <strong>Bias toward English and indexed platforms:</strong> The framework is most effective on
+                  English-language, publicly indexed platforms. Many trafficking networks operate on non-English sites,
+                  dark web marketplaces, or private messaging channels beyond OSINT reach.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive mt-0.5">•</span>
+                <span>
+                  <strong>Manual effort and scaling limitations:</strong> While some processes can be automated, much of
+                  the analysis requires manual verification, limiting the scale of investigations.
+                </span>
+              </li>
+            </ul>
+            <div className="pt-4 border-t">
+              <p className="text-sm font-semibold text-foreground">
+                ⚠️ This site is a proof-of-concept. It demonstrates methodology and visualization — it is not a
+                law-enforcement tool.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
       {/* Ethics & Compliance */}
       <section className="space-y-6">
         <Card className="border-accent/50 bg-accent/5">

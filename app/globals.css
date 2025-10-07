@@ -121,4 +121,25 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Fixed numbered list visibility */
+  ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+  }
+
+  ol li {
+    color: inherit;
+    font-weight: inherit;
+  }
+
+  ul {
+    list-style-position: inside;
+  }
+
+  /* Ensure list markers are visible */
+  ol::marker,
+  ul::marker {
+    color: inherit;
+  }
 }

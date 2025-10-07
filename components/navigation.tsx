@@ -12,8 +12,8 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/data-scoping", label: "Data Scoping" },
   { href: "/data-collection", label: "Data Collection" },
-  { href: "/visualization", label: "Visualization" },
-  { href: "/report", label: "Report" },
+  { href: "/visualization", label: "Network & Visualization" },
+  { href: "/report", label: "Testing & Evaluation" },
   { href: "/ethics", label: "Ethics" },
 ]
 
