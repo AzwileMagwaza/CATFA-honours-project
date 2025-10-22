@@ -301,15 +301,15 @@ export default function TestingEvaluationPage() {
         <CardContent>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="p-4 bg-muted/50 rounded-lg">
-              <div className="text-3xl font-bold text-accent">{totalCases}</div>
+              <div className="text-3xl font-bold text-foreground">{totalCases}</div>
               <p className="text-sm text-muted-foreground mt-1">Total Cases Analyzed</p>
             </div>
             <div className="p-4 bg-muted/50 rounded-lg">
-              <div className="text-3xl font-bold text-accent">{platforms}</div>
+              <div className="text-3xl font-bold text-foreground">{platforms}</div>
               <p className="text-sm text-muted-foreground mt-1">Platforms Monitored</p>
             </div>
             <div className="p-4 bg-muted/50 rounded-lg">
-              <div className="text-3xl font-bold text-accent">{highPriority}</div>
+              <div className="text-3xl font-bold text-foreground">{highPriority}</div>
               <p className="text-sm text-muted-foreground mt-1">High Priority Cases</p>
             </div>
           </div>
