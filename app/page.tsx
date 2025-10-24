@@ -47,7 +47,7 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-foreground">
                   <Search className="h-6 w-6" />
                 </div>
                 <CardTitle>OSINT Methods</CardTitle>
@@ -64,7 +64,7 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-foreground">
                   <Network className="h-6 w-6" />
                 </div>
                 <CardTitle>Network Analysis</CardTitle>
@@ -80,7 +80,7 @@ export default function HomePage() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-foreground">
                   <FileSearch className="h-6 w-6" />
                 </div>
                 <CardTitle>Forensic Analysis</CardTitle>
@@ -110,7 +110,7 @@ export default function HomePage() {
             <CardHeader>
               <div className="flex items-center justify-between">
                 <Badge variant="default">Phase 1</Badge>
-                <Database className="h-5 w-5 text-accent" />
+                <Database className="h-5 w-5 text-foreground" />
               </div>
               <CardTitle className="text-xl">Data Scoping</CardTitle>
             </CardHeader>
@@ -128,7 +128,7 @@ export default function HomePage() {
             <CardHeader>
               <div className="flex items-center justify-between">
                 <Badge variant="default">Phase 2</Badge>
-                <Search className="h-5 w-5 text-accent" />
+                <Search className="h-5 w-5 text-foreground" />
               </div>
               <CardTitle className="text-xl">Data Collection</CardTitle>
             </CardHeader>
@@ -146,7 +146,7 @@ export default function HomePage() {
             <CardHeader>
               <div className="flex items-center justify-between">
                 <Badge variant="default">Phase 3</Badge>
-                <Network className="h-5 w-5 text-accent" />
+                <Network className="h-5 w-5 text-foreground" />
               </div>
               <CardTitle className="text-xl">Network Analysis</CardTitle>
             </CardHeader>
@@ -164,7 +164,7 @@ export default function HomePage() {
             <CardHeader>
               <div className="flex items-center justify-between">
                 <Badge variant="default">Phase 4</Badge>
-                <BarChart3 className="h-5 w-5 text-accent" />
+                <BarChart3 className="h-5 w-5 text-foreground" />
               </div>
               <CardTitle className="text-xl">Evaluation</CardTitle>
             </CardHeader>
@@ -192,7 +192,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="space-y-2">
                 <h3 className="font-semibold flex items-center gap-2">
-                  <Globe className="h-4 w-4 text-accent" />
+                  <Globe className="h-4 w-4 text-foreground" />
                   OSINT Tools
                 </h3>
                 <ul className="text-sm text-muted-foreground space-y-1">
@@ -205,7 +205,7 @@ export default function HomePage() {
 
               <div className="space-y-2">
                 <h3 className="font-semibold flex items-center gap-2">
-                  <Network className="h-4 w-4 text-accent" />
+                  <Network className="h-4 w-4 text-foreground" />
                   Network Analysis
                 </h3>
                 <ul className="text-sm text-muted-foreground space-y-1">
@@ -218,7 +218,7 @@ export default function HomePage() {
 
               <div className="space-y-2">
                 <h3 className="font-semibold flex items-center gap-2">
-                  <FileSearch className="h-4 w-4 text-accent" />
+                  <FileSearch className="h-4 w-4 text-foreground" />
                   Forensic Analysis
                 </h3>
                 <ul className="text-sm text-muted-foreground space-y-1">
