@@ -4,9 +4,10 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import { Moon, Sun, Menu, X, LogOut } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useState } from "react"
+import { useAuth } from "@/components/auth-provider"
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -21,6 +22,11 @@ export function Navigation() {
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { isAuthenticated, logout } = useAuth()
+
+  if (pathname === "/login") {
+    return null
+  }
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
@@ -54,6 +60,13 @@ export function Navigation() {
               <span className="sr-only">Toggle theme</span>
             </Button>
 
+            {isAuthenticated && (
+              <Button variant="ghost" size="icon" onClick={logout} title="Logout">
+                <LogOut className="h-5 w-5" />
+                <span className="sr-only">Logout</span>
+              </Button>
+            )}
+
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
@@ -76,6 +89,12 @@ export function Navigation() {
                 </Button>
               </Link>
             ))}
+            {isAuthenticated && (
+              <Button variant="ghost" className="w-full justify-start" onClick={logout}>
+                <LogOut className="h-4 w-4 mr-2" />
+                Logout
+              </Button>
+            )}
           </div>
         )}
       </div>
