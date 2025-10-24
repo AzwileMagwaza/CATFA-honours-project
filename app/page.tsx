@@ -38,8 +38,8 @@ export default function HomePage() {
         <div className="text-center space-y-2">
           <h2 className="text-3xl font-bold">Project Overview</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            CATFA combines open-source intelligence gathering with network analysis to investigate cultural heritage
-            trafficking in the digital age
+            CATFA combines open-source intelligence gathering with Social Network Analysis to investigate cultural
+            heritage trafficking in the digital age
           </p>
         </div>
 
@@ -184,7 +184,9 @@ export default function HomePage() {
       <section className="space-y-6">
         <div className="text-center space-y-2">
           <h2 className="text-3xl font-bold">Research Tools & Technologies</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">Industry-standard OSINT and forensic analysis tools</p>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Industry-standard OSINT and SNA forensic analysis tools
+          </p>
         </div>
 
         <Card>
@@ -199,7 +201,6 @@ export default function HomePage() {
                   <li>• Google Advanced Search & Dorks</li>
                   <li>• Shodan IoT Search Engine</li>
                   <li>• Archive.org Wayback Machine</li>
-                  <li>• Social Media Intelligence</li>
                 </ul>
               </div>
 
@@ -209,10 +210,8 @@ export default function HomePage() {
                   Network Analysis
                 </h3>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Maltego Transform Hub</li>
+                  <li>• Maltego Community Edition</li>
                   <li>• Gephi Graph Visualization</li>
-                  <li>• Neo4j Graph Database</li>
-                  <li>• NetworkX Python Library</li>
                 </ul>
               </div>
 
@@ -225,7 +224,6 @@ export default function HomePage() {
                   <li>• Forensically Image Analysis</li>
                   <li>• Voyant Tools Text Mining</li>
                   <li>• ExifTool Metadata Extraction</li>
-                  <li>• TinEye Reverse Image Search</li>
                 </ul>
               </div>
             </div>
